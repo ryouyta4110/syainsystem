@@ -29,7 +29,7 @@ public class TourokuController {
   @Autowired
   private UserService userService;
   
-  @GetMapping(value = "/touroku/")
+  @GetMapping(value = "/touroku")
   public String displayAdd(Model model) {
     model.addAttribute("userRequest", new UserRequest());
     return "touroku";
@@ -52,7 +52,7 @@ public class TourokuController {
       model.addAttribute("validationError", errorList);
       return "touroku";
     }
-    // ユーザー情報の登録
+    // ユーザー情報の登録成功
     userService.create(userRequest);
     return "tourokuok";
   }

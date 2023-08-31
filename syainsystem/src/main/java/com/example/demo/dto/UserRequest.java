@@ -30,6 +30,13 @@ public class UserRequest implements Serializable {
   /**
    * 生年月日
    */
-  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  @DateTimeFormat(pattern = "yyyy/MM/dd")
   private String birthday;
+  
+public String getSyain_id() {
+	return "2000-000";
+}
+  
+  
+	
 }

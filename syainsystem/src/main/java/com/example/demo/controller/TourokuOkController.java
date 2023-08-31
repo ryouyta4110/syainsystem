@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class TourokuOkController {
-    @RequestMapping(value = "/tourokuok", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/create", method = RequestMethod.GET)
     public String tourokuok(Model model) {
         return "tourokuok";
     }

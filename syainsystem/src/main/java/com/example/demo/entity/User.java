@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "t_syain")
 public class User implements Serializable {
   /**
    * 社員ID
@@ -24,7 +24,7 @@ public class User implements Serializable {
   @Id
   @Column(name = "SYAIN_ID")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long SYAIN_ID;
+  private String SYAIN_ID;
   /**
    * 氏名
    */
@@ -39,7 +39,7 @@ public class User implements Serializable {
    * 生年月日
    */
   @Column(name = "BIRTHDAY")
-  private String BIRTHDAY;
+  private  String BIRTHDAY;
   /**
    * 登録日時
    */
@@ -49,7 +49,7 @@ public class User implements Serializable {
    * 登録者
    */
   @Column(name = "ENTRY_USER")
-  private Date ENTRY_USER;
+  private String ENTRY_USER;
   /**
    * 更新日時
    */
@@ -59,5 +59,5 @@ public class User implements Serializable {
    * 更新者
    */
   @Column(name = "UPDATE_USER")
-  private Date UPDATE_USER;
+  private String UPDATE_USER;
 }

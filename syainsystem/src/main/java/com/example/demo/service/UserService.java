@@ -38,6 +38,7 @@ public class UserService {
   public void create(UserRequest userRequest) {
     Date now = new Date();
     User user = new User();
+    user.setSYAIN_ID(userRequest.getSyain_id());
     user.setNAME(userRequest.getName());
     user.setSEIBETSU(userRequest.getSeibetsu());
     user.setBIRTHDAY(userRequest.getBirthday());
