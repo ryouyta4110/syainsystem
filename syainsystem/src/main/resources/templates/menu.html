@@ -2,8 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<style>
+	body {
+		text-align: center;
+		}
+	.user{
+		margin:  0px 0px 0px 570px;
+	}
+</style>
 </head>
 <body>
+	<div class="user">
+		<div class="username">
+			<p>ユーザー名:</p>
+		</div>
+		<div class="username2">
+			<p th:text="*{name}"></p>
+		</div>
+	</div>
 	<p>メニュー：</p>
 	<!--登録画面を押すと登録画面に遷移-->
 	<a th:href="@{http://localhost:8080/touroku}" >登録画面</a><br />

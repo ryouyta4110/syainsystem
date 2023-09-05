@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<style>
+	body {
+		text-align: center;
+		}
+	.jouken{
+		display: inline-block;
+	}
+	.user{
+		margin:  0px 0px 0px 570px;
+	}
+	.name{
+		display: inline-block;
+	}
+	.button{
+		display: inline-block;
+	}
+	.kensaku{
+		border-bottom: 7px solid darkblue;
+	}
+	.table,th{
+		margin: 0px 10px 0px 570px;
+		background-color: lightgray;
+		table-layout: auto black;
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+</style>
 </head>
 <body>
+	<div class="user">
+		<div class="username">
+			<p>ユーザー名:</p>
+		</div>
+		<div class="username2">
+			<p th:text="*{name}"></p>
+		</div>
+	</div>
+	<div class="jouken">
+		<p>検索条件</p>
+	</div>
+	<br/>
+	<div class="kensaku">
+		<div class="name">
+		<p>氏名：<input type="text" name="name"/></p>
+		</div>
+		<div class="button">
+			<p><input type="submit" value ="検索"/></p>
+		</div>
+	</div>
+	<br/>
+		<table class ="table">
+        <tr><th>社員ID</th><th>氏名</th><th>性別</th><th>生年月日</th></tr>
+        </table>
+	<a href="/menu" class="btn btn-secondary">戻る</a>
+	<a href="/koushin" class="btn btn-secondary">更新</a>
+	
+	</form>
 
 </body>
 </html>

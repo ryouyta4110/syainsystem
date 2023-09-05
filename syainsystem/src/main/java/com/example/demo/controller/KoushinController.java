@@ -20,7 +20,7 @@ import com.example.demo.service.TouorkuService;
  * ユーザー情報 Controller
  */
 @Controller
-public class TourokuController {
+public class KoushinController {
 
   /**
    * ユーザー情報 Service
@@ -28,10 +28,10 @@ public class TourokuController {
   @Autowired
   private TouorkuService userService;
   
-  @RequestMapping(value = "/touroku")
+  @RequestMapping(value = "/koushin")
   public String displayAdd(Model model) {
     model.addAttribute("tourokuRequest", new TourokuRequest());
-    return "touroku";
+    return "koushin";
   }
   /**
    * ユーザー新規登録
@@ -39,8 +39,8 @@ public class TourokuController {
    * @param model Model
    * @return ユーザー情報一覧画面
    */
-  @PostMapping("/touroku/create")
-  public String create(@Validated @ModelAttribute TourokuRequest tourokuRequest, BindingResult result, Model model) {
+  @PostMapping("/touroku/update")
+  public String update(@Validated @ModelAttribute TourokuRequest tourokuRequest, BindingResult result, Model model) {
 
     if (result.hasErrors()) {
       // 入力チェックエラーの場合
@@ -49,11 +49,11 @@ public class TourokuController {
         errorList.add(error.getDefaultMessage());
       }
       model.addAttribute("validationError", errorList);
-      return "touroku";
+      return "koushin";
     }
     // ユーザー情報の登録成功
     userService.create(tourokuRequest);
-    return "tourokuok";
+    return "koushinok";
   }
 
   

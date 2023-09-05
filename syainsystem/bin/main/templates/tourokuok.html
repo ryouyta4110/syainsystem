@@ -2,14 +2,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<style>
+	body {
+		text-align: center;
+		}
+	.kanryou{
+		color: red;
+		
+	}
+	.user{
+		margin:  0px 0px 0px 570px;
+	}
+	.username{
+		display: inline-block;
+	}
+	.username2{
+		display: inline-block;
+	}
+	.name{
+		display: inline-block;
+	}
+	.name2{
+		display: inline-block;
+	}
+	.seibetsu{
+		display: inline-block;
+	}
+	.seibetsu2{
+		display: inline-block;
+	}
+	.birthday{
+		display: inline-block;
+	}
+	.birthday2{
+		display: inline-block;
+	}
+</style>
 </head>
 <body>
-		<p>登録が完了しました</p>
-		<p>社員ID：</p>
-		<p>性別：</p>
-		<p>生年月日：</p>
+	<brform th:object="${tourokuRequest}">
+	<div class="user">
+		<div class="username">
+			<p>ユーザー名:</p>
+		</div>
+		<div class="username2">
+			<p th:text="*{name}"></p>
+		</div>
+	</div>
+		<br/>		
+		<div class="kanryou">
+			<p>登録が完了しました</p>
+		</div>
+		<div class="name">
+			<p>名前:</p>
+		</div>
+		<div class="name2">
+			<p th:text="*{name}"/>
+		</div>
+		<br/>
+		<div class="seibetsu">
+			<p>性別：</p>
+		</div>
+		<div class="seibetsu2">
+			<p th:text ="*{seibetsu}"/>
+		</div>
+		<br/>
+		<div class="birthday">
+			<p>生年月日：</p>
+		</div>
+		<div class="birthday2">
+			<p th:text="*{birthday}"></p>
+		</div>
+		<br/>
 		<a th:href="@{http://localhost:8080/touroku}" >戻る</a>	
-		
+	</form>
 
 
 </body>

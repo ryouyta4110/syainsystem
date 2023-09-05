@@ -5,9 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class TourokuOkController {
-    @GetMapping("/tourokuok")
+public class koushinOkController {
+    @GetMapping("/koushinok")
     public String tourokuok(Model model) {
-        return "tourokuok";
+        return "koushinok";
     }
 }

@@ -2,21 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<style>
+	body {
+		text-align: center;
+		}
+</style>
 </head>
 <body>
   <div class="container">
     <div th:if="${validationError}" th:each="error : ${validationError}">
       <label class="text-danger" th:text="${error}"></label>
     </div>
-    <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
+    <form th:action="@{/touroku/create}" th:object="${tourokuRequest}" th:method="post">
       <div class="form-group">
         <label>氏名：<span class="text-danger">※</span></label>
         <input type="text" th:field="*{name}" class="form-control">
       </div>
       <div class="form-group">
         <label>性別：</label>
-        <input type="radio" name="seibetsu" value="1">男性
-		<input type="radio" name="seibetsu" value="2">女性
+        <input type="radio"th:field ="*{seibetsu}" th:value="男性">男性
+		<input type="radio"th:field ="*{seibetsu}" th:value="女性">女性
       </div>
       <div class="form-group">
         <label>生年月日：<span class="text-danger">※</span></label>
